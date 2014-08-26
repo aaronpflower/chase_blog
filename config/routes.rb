@@ -1,7 +1,7 @@
 ChaseBlog::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/resources"
-  get "static_pages/about"
+  get "static_pages/home", :as => "home", :path => "home"
+  get '/resources' => 'static_pages#resources'
+  get "static_pages/about", :as => "about", :path => "about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
