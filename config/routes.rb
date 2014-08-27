@@ -1,4 +1,5 @@
 ChaseBlog::Application.routes.draw do
+  root to: 'static_pages#home'
   get "static_pages/home", :as => "home", :path => "home"
   get '/resources' => 'static_pages#resources'
   get "static_pages/about", :as => "about", :path => "about"
