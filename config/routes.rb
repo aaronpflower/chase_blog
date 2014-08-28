@@ -1,9 +1,9 @@
 ChaseBlog::Application.routes.draw do
 
-  get "admin/show"
+  get "admins/show"
 
   root to: 'static_pages#home'
-  get '/admin' => 'admin#show'
+  get '/admin' => 'admins#show'
   get '/home' => 'static_pages#home'
   get '/resources' => 'static_pages#resources'
   get '/about' => 'static_pages#about'
