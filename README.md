@@ -1,6 +1,7 @@
 Blog For Someone
 ===================
 
+<<<<<<< HEAD
 #### What is this? 
 	
 	- This is a blog that will be complete with admin dashboard, user comments, with additonal About and Resources pages
@@ -35,3 +36,8 @@ Blog For Someone
 	
 
 #### Todo
+=======
+for someone
+
+TODO - add setup instructions
+>>>>>>> 26fff57d12eb846fbe9db0d3d926d18069e099a8
