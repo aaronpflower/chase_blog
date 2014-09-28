@@ -1,6 +1,22 @@
-<div class="center hero-unit">
+<!-- <div class="center hero-unit">
 <h1>Blog</h1>
 	<p>
 		This is where a blog will be
 	</p>
+</div>
+ -->
+
+<div class="row">
+	<aside>
+		
+	</aside>
+	<div class="span8">
+		<% if @admin.posts.any? %>
+			<h3>Posts (<%= @admin.posts.count %>)</h3> 
+			<ol class="posts">
+				<%= render @posts %>
+			</ol>
+			<%= will_paginate @posts %> 
+		<% end %>
+	</div>
 </div>

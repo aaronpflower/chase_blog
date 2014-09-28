@@ -1,4 +1,5 @@
 class Admin < ActiveRecord::Base
+  has_many :posts
   before_save { self.email = email.downcase }
  #  attr_accessor :password
 	before_create :create_remember_token # this is a callback method to create a remember token immediately nefore creating a new user in the database
