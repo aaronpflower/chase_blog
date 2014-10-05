@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+	
 	# option 1
 	# has_one :admin
 	# impacts the Admin model by assuming `admins` db table has a column to hold the Post Primary Key
@@ -11,6 +12,7 @@ class Post < ActiveRecord::Base
 
 	has_many :comments, as: :imageable
 	has_many :category_posts
+	has_many :categories, through: :category_posts
 
 	default_scope -> { order('created_at DESC') }
 	# to get the admin_spec post asscoication tests to pass. The DESC is SQL for descending

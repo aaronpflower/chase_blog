@@ -15,7 +15,8 @@ describe Post do
   it { should respond_to(:admin) }
 
   it { should have_many :category_posts }
-
+  it { should have_many :categories }
+  
   its(:admin_id) { should eq admin.id } # it makes sure the post post/admin association matches
 
   it { should be_valid }
