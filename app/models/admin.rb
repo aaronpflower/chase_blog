@@ -1,12 +1,14 @@
 class Admin < ActiveRecord::Base
-  has_many :posts
+  has_and_belongs_to_many :posts
+  has_many :comments, through: :posts
+
   before_save { self.email = email.downcase }
  #  attr_accessor :password
 	before_create :create_remember_token # this is a callback method to create a remember token immediately nefore creating a new user in the database
 
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false } # validates method ensures the email attribute exists in an admin hash before it is saved
-  validates :password, length: { minimum: 6 }
+	# VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
+ #  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false } # validates method ensures the email attribute exists in an admin hash before it is saved
+ #  validates :password, length: { minimum: 6 }
 	has_secure_password
 
 	def Admin.new_remember_token

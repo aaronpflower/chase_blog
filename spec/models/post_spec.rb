@@ -1,3 +1,5 @@
+# Each post is tied to the admin
+# Each post can have comments from users or the admin
 require 'spec_helper'
 
 describe Post do

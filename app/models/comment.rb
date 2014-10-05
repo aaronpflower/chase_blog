@@ -1,5 +1,3 @@
 class Comment < ActiveRecord::Base
-	has_many :comments
-	belongs_to :user
-	belongs_to :admin
+	belongs_to :imageable, polymorphic: true
 end

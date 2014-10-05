@@ -1,3 +1,8 @@
+# There will only be one admin with a valid username and password.  
+# It be managed by session cookies
+# It should have many posts and comments while also being able to create update and delete posts and comments
+# It should be able to update the other static pages
+ 
 require 'spec_helper'
 
 describe Admin do
