@@ -21,6 +21,7 @@ group :test do
   gem 'faker', '~> 1.3.0'
   # gem 'database cleaner', '~> 1.0.1'
   gem 'launchy', '~> 2.4.0'
+  gem 'shoulda'
 end
 
 

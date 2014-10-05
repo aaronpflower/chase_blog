@@ -111,23 +111,22 @@ describe Admin do
 		its(:remember_token) { should_not be_blank }
 	end
 
-	describe "posts associations" do
+	# describe "posts associations" do
+	# 	before { @admin.save }
+	# 	let!(:older_post) do
+	# 		FactoryGirl.create(:post, admin: @admin, created_at: 1.day.ago)
+	# 	end
 
-		before { @admin.save }
-		let!(:older_post) do
-			FactoryGirl.create(:post, admin: @admin, created_at: 1.day.ago)
-		end
+	# 	let!(:newer_post) do
+	# 		FactoryGirl.create(:post, admin: @admin, created_at: 1.hour.ago)
+	# 	end
 
-		let!(:newer_post) do
-			FactoryGirl.create(:post, admin: @admin, created_at: 1.hour.ago)
-		end
-
-		it "should have the right posts in the right order" do
-			expect(@admin.posts.to_a).to eq [newer_post, older_post]
-		# This should initially fail because by default posts will be ordered by id, older on top, newer below.  
-		# Also it verifies the basic correctness of the has_many association itself by checking that admin.posts effectively returns an array of posts
-		# t_a method converts @admin.posts from its default state, Active Record collection proxy to a proper arrray appropriate for comparision
-		end
-	end
+	# 	it "should have the right posts in the right order" do
+	# 		expect(@admin.posts.to_a).to eq [newer_post, older_post]
+	# 	# This should initially fail because by default posts will be ordered by id, older on top, newer below.  
+	# 	# Also it verifies the basic correctness of the has_many association itself by checking that admin.posts effectively returns an array of posts
+	# 	# t_a method converts @admin.posts from its default state, Active Record collection proxy to a proper arrray appropriate for comparision
+	# 	end
+	# end
 end
 

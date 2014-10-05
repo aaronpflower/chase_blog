@@ -1,6 +1,6 @@
 class Admin < ActiveRecord::Base
-  has_and_belongs_to_many :posts
-  has_many :comments, through: :posts
+  # has_and_belongs_to_many :posts
+  # has_many :comments, through: :posts
 
   before_save { self.email = email.downcase }
  #  attr_accessor :password
