@@ -16,6 +16,7 @@ describe Post do
 
   it { should have_many :category_posts }
   it { should have_many :categories }
+  it { should have_many :comments }
   
   its(:admin_id) { should eq admin.id } # it makes sure the post post/admin association matches
 
